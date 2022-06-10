@@ -1,0 +1,769 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SmartNetLib</name>
+    </assembly>
+    <members>
+        <member name="T:SmartNetLib.SProtocol">
+            <summary>
+            파일전송 시 메세지에 사용되는 프로토콜
+            </summary>
+        </member>
+        <member name="F:SmartNetLib.SProtocol.UP">
+            <summary>
+            업로드 요청 명령 ( 클라이언트 측 )
+            </summary>
+        </member>
+        <member name="F:SmartNetLib.SProtocol.DOWN">
+            <summary>
+            다운로드 요청 명령 ( 클라이언트 측 )
+            </summary>
+        </member>
+        <member name="F:SmartNetLib.SProtocol.START">
+            <summary>
+            시작
+            </summary>
+        </member>
+        <member name="F:SmartNetLib.SProtocol.OK">
+            <summary>
+            확인 ( 파일 보내는 쪽에서 )
+            </summary>
+        </member>
+        <member name="F:SmartNetLib.SProtocol.RETRY">
+            <summary>
+            재전송 ( 파일 보내는 쪽에서 )
+            </summary>
+        </member>
+        <member name="F:SmartNetLib.SProtocol.END">
+            <summary>
+            종료 ( 파일 보내는 쪽 )
+            </summary>
+        </member>
+        <member name="T:SmartNetLib.SServer">
+            <summary>
+            서버
+            </summary>
+            
+        </member>
+        <member name="F:SmartNetLib.SServer.isRun">
+            <summary>
+            서버가 동작 중인지...
+            </summary>
+        </member>
+        <member name="F:SmartNetLib.SServer.port">
+            <summary>
+            접속할 Port
+            </summary>
+        </member>
+        <member name="M:SmartNetLib.SServer.OnConnect(SmartNetLib.SSocket.ESocket)">
+            <summary>
+            연결되면 발생
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:SmartNetLib.SServer.#ctor">
+            <summary>
+            생성자
+            기본 생성자를 통해서 생성하면 PORT가 5000 번으로 열림.
+            </summary>
+        </member>
+        <member name="M:SmartNetLib.SServer.#ctor(System.Int32)">
+            <summary>
+            생성자
+            </summary>
+            <param name="port">생성할 Port</param>
+        </member>
+        <member name="M:SmartNetLib.SServer.Finalize">
+            <summary>
+            소멸자
+            </summary>
+        </member>
+        <member name="M:SmartNetLib.SServer.Start">
+            <summary>
+            시작
+            </summary>
+            <returns> 성공 여부 </returns>
+        </member>
+        <member name="M:SmartNetLib.SServer.ServerListener">
+            <summary>
+            접속 체크
+            </summary>
+        </member>
+        <member name="M:SmartNetLib.SServer.AddClient(SmartNetLib.SSocket)">
+            <summary>
+            리스트에 추가
+            </summary>
+            <param name="tcp"> 추가할 소켓 </param>
+            <returns>추가 성공 여부</returns>
+        </member>
+        <member name="M:SmartNetLib.SServer.RemoveClient(SmartNetLib.SSocket)">
+            <summary>
+            리스트에서 삭제
+            </summary>
+            <param name="tcp"> 삭제할 소켓 </param>
+            <returns> 삭제 성공 여부 </returns>
+        </member>
+        <member name="M:SmartNetLib.SServer.Stop">
+            <summary>
+            연결된 모든 Socket 가 있다면 끊고
+            정지 시킨다.
+            </summary>
+            <returns> 종료 성공 여부 </returns>
+        </member>
+        <member name="M:SmartNetLib.SServer.SendMessage(System.String,SmartNetLib.SSocket)">
+            <summary>
+            메세지 전송
+            </summary>
+            <param name="s">전송할 메세지</param>
+            <param name="target"> 전송할 대상 </param>
+        </member>
+        <member name="M:SmartNetLib.SServer.SendAll(System.String)">
+            <summary>
+            전체에 메세지 전송
+            </summary>
+            <param name="s"></param>
+        </member>
+        <member name="M:SmartNetLib.SServer.getSocketForName(System.String)">
+            <summary>
+            사용자 이름으로 해당 SSocket 찾아서 반환
+            </summary>
+            <param name="sUserID"></param>
+        </member>
+        <member name="E:SmartNetLib.SServer.ConnetedSocketEvent">
+            <summary>
+            연결되었을 때 발생하는 이벤트
+            </summary>
+        </member>
+        <member name="P:SmartNetLib.SServer.ListSocket">
+            <summary>
+            접속한 소켓 리스트
+            </summary>
+        </member>
+        <member name="P:SmartNetLib.SServer.thisIP">
+            <summary>
+            서버의 IP 를 반환
+            </summary>
+        </member>
+        <member name="T:SmartNetLib.SServer.ConnectedSocket">
+            <summary>
+            접속시 이벤트 델리게이터
+            </summary>
+            <param name="sender"> 발생자 </param>
+            <param name="e"> 이벤트 아규먼트 </param>
+        </member>
+        <member name="T:ClientDataArrivalHandler">
+            <summary>
+            데이터 수신 이벤트핸들링 함수 delegate 원형
+            </summary>
+        </member>
+        <member name="T:SmartNetLib.SFile">
+            <summary>
+            파일 클래스
+            </summary>
+        </member>
+        <member name="F:SmartNetLib.SFile.FileName">
+            <summary>
+            파일 이름
+            </summary>
+        </member>
+        <member name="F:SmartNetLib.SFile.sendCount">
+            <summary>
+            전송된 숫자 - 한번에 BUFSIZE 만큼 전송됨
+            </summary>
+        </member>
+        <member name="F:SmartNetLib.SFile.totalSize">
+            <summary>
+            총 크기
+            </summary>
+        </member>
+        <member name="M:SmartNetLib.SFile.#ctor(System.String,System.Int64)">
+            <summary>
+            생성자
+            </summary>
+            <param name="FilePath">파일 위치</param>
+            <param name="totalSize">전송받을 파일 크기</param>
+        </member>
+        <member name="M:SmartNetLib.SFile.WriteByte(System.Byte[],System.Boolean)">
+            <summary>
+            파일에 해당 바이트 배열을 쓴다.
+            </summary>
+            <param name="data">바이트 배열</param>
+            <param name="bAdd">추가 할 건지 새로 쓸건지</param>
+            <returns>성공 여부</returns>
+        </member>
+        <member name="M:SmartNetLib.SFile.ReadByte(System.Byte[],System.Int32)">
+            <summary>
+            파일 읽기
+            </summary>
+            <param name="buf">데이터를 저장할 버퍼</param>
+            <param name="fIndex">읽을 위치 ( fIndex * BUFSIZE ) </param>
+            <returns>읽은 바이트 수</returns>
+        </member>
+        <member name="M:SmartNetLib.SFile.DeleteFile">
+            <summary>
+            파일 삭제
+            </summary>
+            <returns>삭제 성공시</returns>
+        </member>
+        <member name="P:SmartNetLib.SFile.FileSize">
+            <summary>
+            오픈한 파일 크기
+            </summary>
+        </member>
+        <member name="P:SmartNetLib.SFile.isEnd">
+            <summary>
+            모두 전송했는지...
+            </summary>
+        </member>
+        <member name="P:SmartNetLib.SFile.isPause">
+            <summary>
+            입력받다 중단되었는지... ( 입력한 파일 크기와 현재 저장된 파일의 크기가 다르면 )
+            </summary>
+        </member>
+        <member name="T:SmartNetLib.SFile.TransError">
+            <summary>
+            파일 전송시 결과
+            </summary>
+        </member>
+        <member name="F:SmartNetLib.SFile.TransError.OK">
+            <summary>
+            정상 처리
+            </summary>
+        </member>
+        <member name="F:SmartNetLib.SFile.TransError.NetworkStreamEmpty">
+            <summary>
+            네트워크스트림이 설정되지 않음
+            </summary>
+        </member>
+        <member name="F:SmartNetLib.SFile.TransError.CloseConnect">
+            <summary>
+            연결이 끊김
+            </summary>
+        </member>
+        <member name="F:SmartNetLib.SFile.TransError.ThreadAbort">
+            <summary>
+            스레드 강제 종료
+            </summary>
+        </member>
+        <member name="F:SmartNetLib.SFile.TransError.MesError">
+            <summary>
+            전송 메세지 오류
+            </summary>
+        </member>
+        <member name="F:SmartNetLib.SFile.TransError.TheOrder">
+            <summary>
+            그외의 에러
+            </summary>
+        </member>
+        <member name="T:csConnStatus">
+            <summary>
+            서버 연결 상태
+            </summary>
+        </member>
+        <member name="F:csConnStatus.Closed">
+            <summary>
+            연결 끊김
+            </summary>
+        </member>
+        <member name="F:csConnStatus.Listening">
+            <summary>
+            대기중
+            </summary>
+        </member>
+        <member name="F:csConnStatus.Connecting">
+            <summary>
+            연결 중
+            </summary>
+        </member>
+        <member name="F:csConnStatus.Connected">
+            <summary>
+            연결됨
+            </summary>
+        </member>
+        <member name="T:ServerDataArrivalHandler">
+            <summary>
+             데이터 수신 이벤트핸들링 함수 delegate 원형
+            </summary>
+        </member>
+        <member name="T:SmartNetLib.SSocket">
+            <summary>
+            서버에서 접속한 소켓을 관리하기 위한 클래스
+            </summary>
+        </member>
+        <member name="F:SmartNetLib.SSocket.UserName">
+            <summary>
+            사용자 이름
+            </summary>
+        </member>
+        <member name="F:SmartNetLib.SSocket.ThisIP">
+            <summary>
+            접속한 IP
+            </summary>
+        </member>
+        <member name="F:SmartNetLib.SSocket.ThisPort">
+            <summary>
+            접속한 Port
+            </summary>
+        </member>
+        <member name="M:SmartNetLib.SSocket.GetStream">
+            <summary>
+            네트워크스트림을 반환한다.
+            </summary>
+            <returns>네트워크 스트림</returns>
+        </member>
+        <member name="M:SmartNetLib.SSocket.#ctor(System.Net.Sockets.TcpClient)">
+            <summary>
+            생성자
+            </summary>
+            <param name="tcp">접속한 소켓</param>
+        </member>
+        <member name="M:SmartNetLib.SSocket.Close">
+            <summary>
+            소켓 종료
+            </summary>
+        </member>
+        <member name="M:SmartNetLib.SSocket.Finalize">
+            <summary>
+            소멸자
+            </summary>
+        </member>
+        <member name="M:SmartNetLib.SSocket.TimerStart">
+            <summary>
+            타이머를 시작한다.
+            </summary>
+        </member>
+        <member name="M:SmartNetLib.SSocket.AfterAccept">
+            <summary>
+            접속된 이후 네트워크 스트림, 메세지 처리기 동작시킴
+            </summary>
+        </member>
+        <member name="M:SmartNetLib.SSocket.SendString(System.String)">
+            <summary>
+            소켓에 연결된 대상에 메세지를 전송한다.
+            </summary>
+            <param name="mes"></param>
+            <exception cref="T:System.IO.IOException">파일 전송 중일 때 발생</exception>
+        </member>
+        <member name="M:SmartNetLib.SSocket.SendStringD(System.String)">
+            <summary>
+            소켓에 연결된 대상에 메세지를 전송한다.
+            끝문자로 "\x0D"를 붙인다.
+            </summary>
+            <param name="mes"></param>
+            <exception cref="T:System.IO.IOException">파일 전송 중일 때 발생</exception>
+        </member>
+        <member name="M:SmartNetLib.SSocket.ReadMessage">
+            <summary>
+            이벤트 발생 함수
+            </summary>
+        </member>
+        <member name="M:SmartNetLib.SSocket.OnTransferError(SmartNetLib.SFile,SmartNetLib.SFile.TransError)">
+            <summary>
+            오류가 발생하면 file 전송 객체를 삭제하고 클라이언트 측 메세지 이벤트 스레드를 살린다.
+            </summary>
+            <param name="sender"></param>
+            <param name="err"></param>
+        </member>
+        <member name="P:SmartNetLib.SSocket.isRun">
+            <summary>
+            메시지 이벤트가 작동되고 있는지...
+            </summary>
+        </member>
+        <member name="P:SmartNetLib.SSocket.isConnect">
+            <summary>
+            접속 여부
+            </summary>
+        </member>
+        <member name="P:SmartNetLib.SSocket.bFileTransfer">
+            <summary>
+            파일 전송중이면 true 로 설정해야 함.
+            </summary>
+        </member>
+        <member name="E:SmartNetLib.SSocket.CompleteTransferEvent">
+            <summary>
+            전송완료시 발생
+            </summary>
+        </member>
+        <member name="E:SmartNetLib.SSocket.StartTransferEvent">
+            <summary>
+            전송 시작시 발생
+            </summary>
+        </member>
+        <member name="E:SmartNetLib.SSocket.ProgressTransferEvent">
+            <summary>
+            한 블럭 전송할 때마다 발생
+            </summary>
+        </member>
+        <member name="E:SmartNetLib.SSocket.TransferErrorEvent">
+            <summary>
+            전송 중 오류 발생시 발생
+            </summary>
+        </member>
+        <member name="E:SmartNetLib.SSocket.ReceiveMessageEvent">
+            <summary>
+            메세지를 전송받으면 발생
+            </summary>
+        </member>
+        <member name="E:SmartNetLib.SSocket.CloseSocketEvent">
+            <summary>
+            소켓이 닫히면 발생
+            </summary>
+        </member>
+        <member name="T:SmartNetLib.SSocket.EventType">
+            <summary>
+            소켓에서 발생할 수 있는 이벤트
+            </summary>
+        </member>
+        <member name="F:SmartNetLib.SSocket.EventType.CompleteTransfer">
+            <summary>
+            파일 전송 완료시 발생
+            </summary>
+        </member>
+        <member name="F:SmartNetLib.SSocket.EventType.StartTransfer">
+            <summary>
+            파일 전송을 시작할 때 발생
+            </summary>
+        </member>
+        <member name="F:SmartNetLib.SSocket.EventType.ProgressTransfer">
+            <summary>
+            파일 전송 중에 수시로 발생
+            </summary>
+        </member>
+        <member name="F:SmartNetLib.SSocket.EventType.TransferError">
+            <summary>
+            파일 전송 오류가 생겼을 때 발생
+            </summary>
+        </member>
+        <member name="F:SmartNetLib.SSocket.EventType.ReceiveMessage">
+            <summary>
+            메시지를 받았을 때 발생
+            </summary>
+        </member>
+        <member name="F:SmartNetLib.SSocket.EventType.CloseSocket">
+            <summary>
+            소켓이 닫힐 때 발생
+            </summary>
+        </member>
+        <member name="T:SmartNetLib.SSocket.ESocket">
+            <summary>
+            연결되거나 연결이 끊어진 Socket
+            </summary>
+        </member>
+        <member name="M:SmartNetLib.SSocket.ESocket.#ctor(SmartNetLib.SSocket)">
+            <summary>
+            이벤트 아규먼트 생성자
+            </summary>
+            <param name="tcp">소켓</param>
+        </member>
+        <member name="P:SmartNetLib.SSocket.ESocket.SSocket">
+            <summary>
+            소켓
+            </summary>
+        </member>
+        <member name="T:SmartNetLib.SSocket.ReceiveMessageEventArg">
+            <summary>
+            메시지 아규먼트
+            </summary>
+        </member>
+        <member name="M:SmartNetLib.SSocket.ReceiveMessageEventArg.#ctor(System.String)">
+            <summary>
+            생성자
+            </summary>
+            <param name="message"> 전송받은 메세지 </param>
+        </member>
+        <member name="P:SmartNetLib.SSocket.ReceiveMessageEventArg.receiveMessage">
+            <summary>
+            전송받은 메세지
+            </summary>
+        </member>
+        <member name="T:SmartNetLib.SSocket.ClosedSocket">
+            <summary>
+            소켓이 닫히면 발생
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="T:SmartNetLib.SSocket.CompleteTransfer">
+            <summary>
+            전송완료시 발생
+            </summary>
+            <param name="sender">현재 파일 전송에 관여하는 SClient</param>
+            <param name="e">현재 파일 전송과 연관 있는 SFileNet</param>
+        </member>
+        <member name="T:SmartNetLib.SSocket.StratTransfer">
+            <summary>
+            전송 시작시 발생
+            </summary>
+            <param name="sender">현재 파일 전송에 관여하는 SClient</param>
+            <param name="e">현재 파일 전송과 연관 있는 SFileNet</param>
+        </member>
+        <member name="T:SmartNetLib.SSocket.ProgressTransfer">
+            <summary>
+            한 블럭 전송할 때마다 발생
+            </summary>
+            <param name="sender">현재 파일 전송에 관여하는 SClient</param>
+            <param name="e">현재 파일 전송과 연관 있는 SFileNet</param>
+        </member>
+        <member name="T:SmartNetLib.SSocket.TransferError">
+            <summary>
+            전송시 오류 발생시 발생
+            </summary>
+            <param name="sender">현재 파일 전송에 관여하는 SClient</param>
+            <param name="e">현재 파일 전송과 연관 있는 SFileNet</param>
+            <param name="err">발생한 오류</param>
+        </member>
+        <member name="T:SmartNetLib.SSocket.ReceiveMessage">
+            <summary>
+            메세지 전송용 대리자
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="T:SmartNetLib.SClient">
+            <summary>
+            클라이언트
+            </summary>
+        </member>
+        <member name="F:SmartNetLib.SClient.UserName">
+            <summary>
+            사용자 이름
+            </summary>
+        </member>
+        <member name="F:SmartNetLib.SClient.ServerIP">
+            <summary>
+            접속할 서버의 IP
+            </summary>
+        </member>
+        <member name="F:SmartNetLib.SClient.ServerPort">
+            <summary>
+            접속할 서버의 Port
+            </summary>
+        </member>
+        <member name="F:SmartNetLib.SClient.ThisIP">
+            <summary>
+            자신의 IP
+            </summary>
+        </member>
+        <member name="F:SmartNetLib.SClient.ThisPort">
+            <summary>
+            자신의 Port
+            </summary>
+        </member>
+        <member name="M:SmartNetLib.SClient.GetStream">
+            <summary>
+            네트워크 스트림을 받아온다.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SmartNetLib.SClient.#ctor">
+            <summary>
+            생성자
+            </summary>
+        </member>
+        <member name="M:SmartNetLib.SClient.#ctor(System.Net.Sockets.TcpClient)">
+            <summary>
+            생성자
+            </summary>
+            <param name="tcp"> 연결된 TcpClient </param>
+        </member>
+        <member name="M:SmartNetLib.SClient.Close">
+            <summary>
+            연결 종료
+            </summary>
+        </member>
+        <member name="M:SmartNetLib.SClient.Finalize">
+            <summary>
+            소멸자
+            </summary>
+        </member>
+        <member name="M:SmartNetLib.SClient.Connect">
+            <summary>
+            연결한다.
+            </summary>
+            <returns>성공 여부</returns>
+        </member>
+        <member name="M:SmartNetLib.SClient.Connect(System.String,System.Int32)">
+            <summary>
+            연결한다.
+            </summary>
+            <param name="IP"> 서버 IP </param>
+            <param name="port"> 서버 Port </param>
+            <returns></returns>
+        </member>
+        <member name="M:SmartNetLib.SClient.SendString(System.String)">
+            <summary>
+            서버에 문자열을 전송한다.
+            </summary>
+            <param name="mes"> 전송할 문자열 </param>
+        </member>
+        <member name="M:SmartNetLib.SClient.SendStringD(System.String)">
+            <summary>
+            서버에 문자열을 전송한다.
+            끝문자로 "\x0D"를 붙인다.
+            </summary>
+            <param name="mes"> 전송할 문자열 </param>
+        </member>
+        <member name="M:SmartNetLib.SClient.ReadMessage">
+            <summary>
+            이벤트 발생 함수
+            </summary>
+        </member>
+        <member name="M:SmartNetLib.SClient.FileUpload(System.String,System.String)">
+            <summary>
+            파일 업로드 ... 서버 측에 파일을 보낸다.
+            </summary>
+            <param name="fromFile">업로드할 파일</param>
+            <param name="toFile">저장할 파일</param>
+            <exception cref="T:System.IO.FileNotFoundException">파일을 찾을 수 없을 경우</exception>
+        </member>
+        <member name="M:SmartNetLib.SClient.FileDownLoad(System.String,System.String)">
+            <summary>
+            파일 다운로드 ... 서버 측 파일을 내려 받는다.
+            </summary>
+            <param name="fromFile">받을 파일</param>
+            <param name="toFile">저장할 파일</param>
+        </member>
+        <member name="M:SmartNetLib.SClient.OnTransferError(SmartNetLib.SFile,SmartNetLib.SFile.TransError)">
+            <summary>
+            오류가 발생하면 file 전송 객체를 삭제하고 클라이언트 측 메세지 이벤트 스레드를 살린다.
+            </summary>
+            <param name="sender"></param>
+            <param name="err"></param>
+        </member>
+        <member name="M:SmartNetLib.SClient.OnCompleteTransfer(SmartNetLib.SFile)">
+            <summary>
+            완료 되면 file 전송 객체를 삭제하고 클라이언트 측의 메세지 이벤트 스레드를 살린다.
+            </summary>
+            <param name="sender"></param>
+        </member>
+        <member name="P:SmartNetLib.SClient.isConnect">
+            <summary>
+            접속되었는지를 확인한다.
+            </summary>
+        </member>
+        <member name="E:SmartNetLib.SClient.CloseClientEvent">
+            <summary>
+            연결 해제 되면 발생.
+            </summary>
+        </member>
+        <member name="E:SmartNetLib.SClient.CompleteTransferEvent">
+            <summary>
+            전송완료시 발생
+            </summary>
+        </member>
+        <member name="E:SmartNetLib.SClient.StartTransferEvent">
+            <summary>
+            전송 시작시 발생
+            </summary>
+        </member>
+        <member name="E:SmartNetLib.SClient.ProgressTransferEvent">
+            <summary>
+            한 블럭 전송할 때마다 발생
+            </summary>
+        </member>
+        <member name="E:SmartNetLib.SClient.TransferErrorEvent">
+            <summary>
+            전송 중 오류 발생시 발생
+            </summary>
+        </member>
+        <member name="E:SmartNetLib.SClient.ReceiveMessageEvent">
+            <summary>
+            메세지를 전송받으면 발생
+            </summary>
+        </member>
+        <member name="T:SmartNetLib.SClient.EventType">
+            <summary>
+            소켓에서 발생할 수 있는 이벤트
+            </summary>
+        </member>
+        <member name="F:SmartNetLib.SClient.EventType.CompleteTransfer">
+            <summary>
+            파일 전송 완료시 발생
+            </summary>
+        </member>
+        <member name="F:SmartNetLib.SClient.EventType.StartTransfer">
+            <summary>
+            파일 전송을 시작할 때 발생
+            </summary>
+        </member>
+        <member name="F:SmartNetLib.SClient.EventType.ProgressTransfer">
+            <summary>
+            파일 전송 중에 수시로 발생
+            </summary>
+        </member>
+        <member name="F:SmartNetLib.SClient.EventType.TransferError">
+            <summary>
+            파일 전송 오류가 생겼을 때 발생
+            </summary>
+        </member>
+        <member name="F:SmartNetLib.SClient.EventType.ReceiveMessage">
+            <summary>
+            메시지를 받았을 때 발생
+            </summary>
+        </member>
+        <member name="F:SmartNetLib.SClient.EventType.CloseClient">
+            <summary>
+            소켓이 닫힐 때 발생
+            </summary>
+        </member>
+        <member name="T:SmartNetLib.SClient.ReceiveMessageEventArg">
+            <summary>
+            메세지 처리용 아규먼트
+            </summary>
+        </member>
+        <member name="M:SmartNetLib.SClient.ReceiveMessageEventArg.#ctor(System.String)">
+            <summary>
+            전송받은 메시지가 저장된 메세지 아규먼트
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="P:SmartNetLib.SClient.ReceiveMessageEventArg.ReceiveMessage">
+            <summary>
+            전송받은 메세지
+            </summary>
+        </member>
+        <member name="T:SmartNetLib.SClient.ClosedClient">
+            <summary>
+            연결 해제 되면 발생한다.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="T:SmartNetLib.SClient.CompleteTransfer">
+            <summary>
+            전송완료시 발생
+            </summary>
+            <param name="sender">현재 파일 전송에 관여하는 SClient</param>
+            <param name="e">현재 파일 전송과 연관 있는 SFileNet</param>
+        </member>
+        <member name="T:SmartNetLib.SClient.StratTransfer">
+            <summary>
+            전송 시작시 발생
+            </summary>
+            <param name="sender">현재 파일 전송에 관여하는 SClient</param>
+            <param name="e">현재 파일 전송과 연관 있는 SFileNet</param>
+        </member>
+        <member name="T:SmartNetLib.SClient.ProgressTransfer">
+            <summary>
+            한 블럭 전송할 때마다 발생
+            </summary>
+            <param name="sender">현재 파일 전송에 관여하는 SClient</param>
+            <param name="e">현재 파일 전송과 연관 있는 SFileNet</param>
+        </member>
+        <member name="T:SmartNetLib.SClient.TransferError">
+            <summary>
+            전송시 오류 발생시 발생
+            </summary>
+            <param name="sender">현재 파일 전송에 관여하는 SClient</param>
+            <param name="e">현재 파일 전송과 연관 있는 SFileNet</param>
+            <param name="err">발생한 오류</param>
+        </member>
+        <member name="T:SmartNetLib.SClient.ReceiveMessage">
+            <summary>
+            메세지 전송용 대리자
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+    </members>
+</doc>
