@@ -1,0 +1,1066 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{FCF3AA47-4BC7-4D83-894B-F2C96E74EEB1}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SmartDas</RootNamespace>
+    <AssemblyName>SmartDas</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <PublishUrl>http://localhost/SmartDas/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Charts.v16.2.Core, Version=16.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Data.v16.2, Version=16.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\DevExpress 16.2\Components\Bin\Framework\DevExpress.Data.v16.2.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Office.v16.2.Core, Version=16.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Pdf.v16.2.Core, Version=16.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.PivotGrid.v16.2.Core, Version=16.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Printing.v16.2.Core, Version=16.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\DevExpress 16.2\Components\Bin\Framework\DevExpress.Printing.v16.2.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.RichEdit.v16.2.Core, Version=16.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Sparkline.v16.2.Core, Version=16.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v16.2, Version=16.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\DevExpress 16.2\Components\Bin\Framework\DevExpress.Utils.v16.2.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v16.2.UI, Version=16.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v16.2, Version=16.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v16.2, Version=16.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraGauges.v16.2.Core, Version=16.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraPrinting.v16.2, Version=16.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\DevExpress 16.2\Components\Bin\Framework\DevExpress.XtraPrinting.v16.2.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraReports.v16.2, Version=16.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\DevExpress 16.2\Components\Bin\Framework\DevExpress.XtraReports.v16.2.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraReports.v16.2.Extensions, Version=16.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Infragistics2.Shared.v11.1, Version=11.1.20111.2071, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Infragistics2.Win.Misc.v11.1, Version=11.1.20111.2071, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Infragistics2.Win.UltraWinEditors.v11.1, Version=11.1.20111.2071, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Infragistics2.Win.UltraWinFormattedText.WordWriter.v11.1, Version=11.1.20111.2071, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics2.Win.UltraWinGrid.v11.1, Version=11.1.20111.2071, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Infragistics2.Win.UltraWinMaskedEdit.v11.1, Version=11.1.20111.2071, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics2.Win.UltraWinSchedule.v11.1, Version=11.1.20111.2071, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Infragistics2.Win.UltraWinTabControl.v11.1, Version=11.1.20111.2071, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Infragistics2.Win.UltraWinToolbars.v11.1, Version=11.1.20111.2071, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Infragistics2.Win.v11.1, Version=11.1.20111.2071, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=5.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Microsoft Enterprise Library 5.0\Bin\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Data, Version=5.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Microsoft Enterprise Library 5.0\Bin\Microsoft.Practices.EnterpriseLibrary.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="clsDB.cs" />
+    <Compile Include="Common.cs" />
+    <Compile Include="Components\ButtonData.cs" />
+    <Compile Include="Components\ButtonBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\ButtonBox.Designer.cs">
+      <DependentUpon>ButtonBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\DesignGroup.cs" />
+    <Compile Include="Components\MESButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\MESButton.Designer.cs">
+      <DependentUpon>MESButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DA\DA0070.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DA\DA0070.Designer.cs">
+      <DependentUpon>DA0070.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DA\DA0080.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DA\DA0080.Designer.cs">
+      <DependentUpon>DA0080.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DA\DA0100.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DA\DA0100.Designer.cs">
+      <DependentUpon>DA0100.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DA\DA0130.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DA\DA0130.designer.cs">
+      <DependentUpon>DA0130.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DA\DA0200.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DA\DA0200.Designer.cs">
+      <DependentUpon>DA0200.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DA\DA0230.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DA\DA0230.Designer.cs">
+      <DependentUpon>DA0230.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DA\DA0400.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DA\DA0400.Designer.cs">
+      <DependentUpon>DA0400.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DA\DA0500.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DA\DA0500.Designer.cs">
+      <DependentUpon>DA0500.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DA\DA0520.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DA\DA0520.Designer.cs">
+      <DependentUpon>DA0520.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DA\DA0640.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DA\DA0640.Designer.cs">
+      <DependentUpon>DA0640.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DA\DA0670.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DA\DA0670.designer.cs">
+      <DependentUpon>DA0670.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DA\DA0800.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DA\DA0800.Designer.cs">
+      <DependentUpon>DA0800.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DA\DA0900.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DA\DA0900.Designer.cs">
+      <DependentUpon>DA0900.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DA\DA0910.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DA\DA0910.Designer.cs">
+      <DependentUpon>DA0910.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DA\DA1000.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DA\DA1000.Designer.cs">
+      <DependentUpon>DA1000.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DA\DA1010.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DA\DA1010.designer.cs">
+      <DependentUpon>DA1010.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DA\DA1120.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DA\DA1120.Designer.cs">
+      <DependentUpon>DA1120.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DA\DA1200.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DA\DA1200.designer.cs">
+      <DependentUpon>DA1200.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DA\DA1210.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DA\DA1210.designer.cs">
+      <DependentUpon>DA1210.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DA\DA2100.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DA\DA2100.Designer.cs">
+      <DependentUpon>DA2100.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DA\DA2170.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DA\DA2170.designer.cs">
+      <DependentUpon>DA2170.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DA\DA2200.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DA\DA2200.Designer.cs">
+      <DependentUpon>DA2200.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DA\DA4100.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DA\DA4100.Designer.cs">
+      <DependentUpon>DA4100.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DA\DA4200.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DA\DA4200.designer.cs">
+      <DependentUpon>DA4200.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DA\DA5100.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DA\DA5100.Designer.cs">
+      <DependentUpon>DA5100.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DA\DA5200.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DA\DA5200.designer.cs">
+      <DependentUpon>DA5200.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DA\DA6000.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DA\DA6000.designer.cs">
+      <DependentUpon>DA6000.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DA\DA6010.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DA\DA6010.Designer.cs">
+      <DependentUpon>DA6010.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DA\DA6020.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DA\DA6020.designer.cs">
+      <DependentUpon>DA6020.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DA\DA6100.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DA\DA6100.designer.cs">
+      <DependentUpon>DA6100.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DA\DA6200.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DA\DA6200.designer.cs">
+      <DependentUpon>DA6200.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DA\DA7000.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DA\DA7000.designer.cs">
+      <DependentUpon>DA7000.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DA\DA7020.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DA\DA7020.designer.cs">
+      <DependentUpon>DA7020.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DA\DA9000.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DA\DA9000.Designer.cs">
+      <DependentUpon>DA9000.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\BaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Components\BaseForm.Designer.cs">
+      <DependentUpon>BaseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\MESGrid.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\MESGrid.Designer.cs">
+      <DependentUpon>MESGrid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\SetSystemTime.cs" />
+    <Compile Include="Components\MESLabel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\MESLabel.Designer.cs">
+      <DependentUpon>MESLabel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DA\DA1110.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DA\DA1110.Designer.cs">
+      <DependentUpon>DA1110.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DA\DA0210.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DA\DA0210.Designer.cs">
+      <DependentUpon>DA0210.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DA\DA8000.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DA\DA8000.Designer.cs">
+      <DependentUpon>DA8000.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DA\DA8010.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DA\DA8010.Designer.cs">
+      <DependentUpon>DA8010.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DA\DA0120.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DA\DA0120.Designer.cs">
+      <DependentUpon>DA0120.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DA\DA0700.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DA\DA0700.Designer.cs">
+      <DependentUpon>DA0700.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DA\DA0630.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DA\DA0630.Designer.cs">
+      <DependentUpon>DA0630.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DA\DA5000.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DA\DA5000.Designer.cs">
+      <DependentUpon>DA5000.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DA\DA0610.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DA\DA0610.Designer.cs">
+      <DependentUpon>DA0610.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DA\DA0060.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DA\DA0060.Designer.cs">
+      <DependentUpon>DA0060.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DA\DA0050.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DA\DA0050.Designer.cs">
+      <DependentUpon>DA0050.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DA\DA2500.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DA\DA2500.Designer.cs">
+      <DependentUpon>DA2500.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DA\DA7010.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DA\DA7010.designer.cs">
+      <DependentUpon>DA7010.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DA\DA2300.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DA\DA2300.Designer.cs">
+      <DependentUpon>DA2300.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DA\DA0650.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DA\DA0650.Designer.cs">
+      <DependentUpon>DA0650.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DA\DA0660.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DA\DA0660.Designer.cs">
+      <DependentUpon>DA0660.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DA\LabelReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DA\LabelReport.Designer.cs">
+      <DependentUpon>LabelReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LabelPrint.cs" />
+    <Compile Include="POPUP\BaseProgressForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="POPUP\BaseProgressForm.designer.cs">
+      <DependentUpon>BaseProgressForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="POPUP\CircularProgressControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="POPUP\CircularProgressControl.designer.cs">
+      <DependentUpon>CircularProgressControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="POPUP\DA9100.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="POPUP\DA9100.Designer.cs">
+      <DependentUpon>DA9100.cs</DependentUpon>
+    </Compile>
+    <Compile Include="POPUP\DA9120.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="POPUP\DA9120.designer.cs">
+      <DependentUpon>DA9120.cs</DependentUpon>
+    </Compile>
+    <Compile Include="POPUP\DA9140.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="POPUP\DA9140.Designer.cs">
+      <DependentUpon>DA9140.cs</DependentUpon>
+    </Compile>
+    <Compile Include="POPUP\DA9200.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="POPUP\DA9200.Designer.cs">
+      <DependentUpon>DA9200.cs</DependentUpon>
+    </Compile>
+    <Compile Include="POPUP\DA9210.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="POPUP\DA9210.Designer.cs">
+      <DependentUpon>DA9210.cs</DependentUpon>
+    </Compile>
+    <Compile Include="POPUP\DA9300.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="POPUP\DA9300.Designer.cs">
+      <DependentUpon>DA9300.cs</DependentUpon>
+    </Compile>
+    <Compile Include="POPUP\DA9400.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="POPUP\DA9400.Designer.cs">
+      <DependentUpon>DA9400.cs</DependentUpon>
+    </Compile>
+    <Compile Include="POPUP\DA9500.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="POPUP\DA9500.Designer.cs">
+      <DependentUpon>DA9500.cs</DependentUpon>
+    </Compile>
+    <Compile Include="POPUP\DA9520.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="POPUP\DA9520.designer.cs">
+      <DependentUpon>DA9520.cs</DependentUpon>
+    </Compile>
+    <Compile Include="POPUP\DA9620.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="POPUP\DA9620.Designer.cs">
+      <DependentUpon>DA9620.cs</DependentUpon>
+    </Compile>
+    <Compile Include="POPUP\DA9700.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="POPUP\DA9700.Designer.cs">
+      <DependentUpon>DA9700.cs</DependentUpon>
+    </Compile>
+    <Compile Include="POPUP\DA9800.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="POPUP\DA9800.designer.cs">
+      <DependentUpon>DA9800.cs</DependentUpon>
+    </Compile>
+    <Compile Include="POPUP\DA9994.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="POPUP\DA9994.designer.cs">
+      <DependentUpon>DA9994.cs</DependentUpon>
+    </Compile>
+    <Compile Include="POPUP\DA9995.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="POPUP\DA9995.designer.cs">
+      <DependentUpon>DA9995.cs</DependentUpon>
+    </Compile>
+    <Compile Include="POPUP\MessageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="POPUP\MessageForm.Designer.cs">
+      <DependentUpon>MessageForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="POPUP\DA9600.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="POPUP\DA9600.Designer.cs">
+      <DependentUpon>DA9600.cs</DependentUpon>
+    </Compile>
+    <Compile Include="POPUP\DA9510.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="POPUP\DA9510.Designer.cs">
+      <DependentUpon>DA9510.cs</DependentUpon>
+    </Compile>
+    <Compile Include="POPUP\DA9530.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="POPUP\DA9530.designer.cs">
+      <DependentUpon>DA9530.cs</DependentUpon>
+    </Compile>
+    <Compile Include="POPUP\DA9900.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="POPUP\DA9900.designer.cs">
+      <DependentUpon>DA9900.cs</DependentUpon>
+    </Compile>
+    <Compile Include="POPUP\DA9610.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="POPUP\DA9610.Designer.cs">
+      <DependentUpon>DA9610.cs</DependentUpon>
+    </Compile>
+    <Compile Include="POPUP\DA9810.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="POPUP\DA9810.designer.cs">
+      <DependentUpon>DA9810.cs</DependentUpon>
+    </Compile>
+    <Compile Include="POPUP\DA9999.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="POPUP\DA9999.designer.cs">
+      <DependentUpon>DA9999.cs</DependentUpon>
+    </Compile>
+    <Compile Include="POPUP\DA9998.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="POPUP\DA9998.designer.cs">
+      <DependentUpon>DA9998.cs</DependentUpon>
+    </Compile>
+    <Compile Include="POPUP\DA9997.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="POPUP\DA9997.designer.cs">
+      <DependentUpon>DA9997.cs</DependentUpon>
+    </Compile>
+    <Compile Include="POPUP\DA9996.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="POPUP\DA9996.designer.cs">
+      <DependentUpon>DA9996.cs</DependentUpon>
+    </Compile>
+    <Compile Include="POPUP\DA9110.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="POPUP\DA9110.Designer.cs">
+      <DependentUpon>DA9110.cs</DependentUpon>
+    </Compile>
+    <Compile Include="POPUP\DA9993.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="POPUP\DA9993.designer.cs">
+      <DependentUpon>DA9993.cs</DependentUpon>
+    </Compile>
+    <Compile Include="POPUP\DA9901.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="POPUP\DA9901.designer.cs">
+      <DependentUpon>DA9901.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Components\ButtonBox.resx">
+      <DependentUpon>ButtonBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\MESButton.resx">
+      <DependentUpon>MESButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\BaseForm.resx">
+      <DependentUpon>BaseForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\MESGrid.resx">
+      <DependentUpon>MESGrid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\MESLabel.resx">
+      <DependentUpon>MESLabel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DA\DA0070.resx">
+      <DependentUpon>DA0070.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DA\DA0080.resx">
+      <DependentUpon>DA0080.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DA\DA0100.resx">
+      <DependentUpon>DA0100.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DA\DA0130.resx">
+      <DependentUpon>DA0130.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DA\DA0200.resx">
+      <DependentUpon>DA0200.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DA\DA0230.resx">
+      <DependentUpon>DA0230.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DA\DA0400.resx">
+      <DependentUpon>DA0400.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DA\DA0500.resx">
+      <DependentUpon>DA0500.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DA\DA0520.resx">
+      <DependentUpon>DA0520.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DA\DA0640.resx">
+      <DependentUpon>DA0640.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DA\DA0670.resx">
+      <DependentUpon>DA0670.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DA\DA0800.resx">
+      <DependentUpon>DA0800.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DA\DA0900.resx">
+      <DependentUpon>DA0900.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DA\DA0910.resx">
+      <DependentUpon>DA0910.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DA\DA1000.resx">
+      <DependentUpon>DA1000.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DA\DA1010.resx">
+      <DependentUpon>DA1010.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DA\DA1120.resx">
+      <DependentUpon>DA1120.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DA\DA1200.resx">
+      <DependentUpon>DA1200.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DA\DA1210.resx">
+      <DependentUpon>DA1210.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DA\DA2100.resx">
+      <DependentUpon>DA2100.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DA\DA2170.resx">
+      <DependentUpon>DA2170.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DA\DA2200.resx">
+      <DependentUpon>DA2200.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DA\DA4100.resx">
+      <DependentUpon>DA4100.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DA\DA4200.resx">
+      <DependentUpon>DA4200.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DA\DA5100.resx">
+      <DependentUpon>DA5100.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DA\DA5200.resx">
+      <DependentUpon>DA5200.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DA\DA6000.resx">
+      <DependentUpon>DA6000.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DA\DA6010.resx">
+      <DependentUpon>DA6010.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DA\DA6020.resx">
+      <DependentUpon>DA6020.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DA\DA6100.resx">
+      <DependentUpon>DA6100.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DA\DA6200.resx">
+      <DependentUpon>DA6200.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DA\DA7000.resx">
+      <DependentUpon>DA7000.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DA\DA7020.resx">
+      <DependentUpon>DA7020.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DA\DA9000.resx">
+      <DependentUpon>DA9000.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DA\DA1110.resx">
+      <DependentUpon>DA1110.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DA\DA0210.resx">
+      <DependentUpon>DA0210.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DA\DA8000.resx">
+      <DependentUpon>DA8000.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DA\DA8010.resx">
+      <DependentUpon>DA8010.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DA\DA0120.resx">
+      <DependentUpon>DA0120.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DA\DA0700.resx">
+      <DependentUpon>DA0700.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DA\DA0630.resx">
+      <DependentUpon>DA0630.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DA\DA5000.resx">
+      <DependentUpon>DA5000.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DA\DA0610.resx">
+      <DependentUpon>DA0610.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DA\DA0060.resx">
+      <DependentUpon>DA0060.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DA\DA0050.resx">
+      <DependentUpon>DA0050.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DA\DA2500.resx">
+      <DependentUpon>DA2500.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DA\DA7010.resx">
+      <DependentUpon>DA7010.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DA\DA2300.resx">
+      <DependentUpon>DA2300.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DA\DA0650.resx">
+      <DependentUpon>DA0650.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DA\DA0660.resx">
+      <DependentUpon>DA0660.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DA\LabelReport.resx">
+      <DependentUpon>LabelReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="POPUP\BaseProgressForm.resx">
+      <DependentUpon>BaseProgressForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="POPUP\DA9100.resx">
+      <DependentUpon>DA9100.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="POPUP\DA9120.resx">
+      <DependentUpon>DA9120.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="POPUP\DA9140.resx">
+      <DependentUpon>DA9140.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="POPUP\DA9200.resx">
+      <DependentUpon>DA9200.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="POPUP\DA9210.resx">
+      <DependentUpon>DA9210.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="POPUP\DA9300.resx">
+      <DependentUpon>DA9300.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="POPUP\DA9400.resx">
+      <DependentUpon>DA9400.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="POPUP\DA9500.resx">
+      <DependentUpon>DA9500.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="POPUP\DA9520.resx">
+      <DependentUpon>DA9520.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="POPUP\DA9620.resx">
+      <DependentUpon>DA9620.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="POPUP\DA9700.resx">
+      <DependentUpon>DA9700.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="POPUP\DA9800.resx">
+      <DependentUpon>DA9800.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="POPUP\DA9994.resx">
+      <DependentUpon>DA9994.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="POPUP\DA9995.resx">
+      <DependentUpon>DA9995.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="POPUP\MessageForm.resx">
+      <DependentUpon>MessageForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="POPUP\DA9600.resx">
+      <DependentUpon>DA9600.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="POPUP\DA9510.resx">
+      <DependentUpon>DA9510.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="POPUP\DA9530.resx">
+      <DependentUpon>DA9530.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="POPUP\DA9900.resx">
+      <DependentUpon>DA9900.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="POPUP\DA9610.resx">
+      <DependentUpon>DA9610.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="POPUP\DA9810.resx">
+      <DependentUpon>DA9810.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="POPUP\DA9999.resx">
+      <DependentUpon>DA9999.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="POPUP\DA9998.resx">
+      <DependentUpon>DA9998.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="POPUP\DA9997.resx">
+      <DependentUpon>DA9997.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="POPUP\DA9996.resx">
+      <DependentUpon>DA9996.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="POPUP\DA9110.resx">
+      <DependentUpon>DA9110.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="POPUP\DA9993.resx">
+      <DependentUpon>DA9993.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="POPUP\DA9901.resx">
+      <DependentUpon>DA9901.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="3of9_new.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="ClassDiagram2.cd" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4%28x86 및 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="SmartNetLib\SmartNetLib.csproj">
+      <Project>{F935DE74-F8B5-4C87-A01A-278B1B3A5B91}</Project>
+      <Name>SmartNetLib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bt10.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ci_page.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Components\Resources\Logo_ecm.png" />
+    <Content Include="Components\Resources\Logo_Samkee.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\삼기EV Logo 2.png" />
+    <None Include="Resources\삼기 Logo.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
