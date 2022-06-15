@@ -46,6 +46,7 @@
             this.mesGrid3 = new SmartDas.Components.MESGrid();
             this.mesGrid4 = new SmartDas.Components.MESGrid();
             this.mesGrid5 = new SmartDas.Components.MESGrid();
+            this.btnLoadPrevCond = new SmartDas.Components.MESButton();
             ((System.ComponentModel.ISupportInitialize)(this.GroupBody)).BeginInit();
             this.GroupBody.SuspendLayout();
             this.SuspendLayout();
@@ -65,6 +66,7 @@
             // 
             // GroupBody
             // 
+            this.GroupBody.Controls.Add(this.btnLoadPrevCond);
             this.GroupBody.Controls.Add(this.mesGrid5);
             this.GroupBody.Controls.Add(this.mesGrid4);
             this.GroupBody.Controls.Add(this.mesGrid3);
@@ -428,6 +430,37 @@
             this.mesGrid5.TabIndex = 119;
             this.mesGrid5.GridClick += new SmartDas.Components.MESGrid.gridClick(this.mesGrid1_GridClick);
             // 
+            // btnLoadPrevCond
+            // 
+            this.btnLoadPrevCond.AlarmColor1 = System.Drawing.Color.IndianRed;
+            this.btnLoadPrevCond.AlarmColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnLoadPrevCond.BackColor = System.Drawing.SystemColors.Window;
+            this.btnLoadPrevCond.BackColor1 = System.Drawing.Color.LightGreen;
+            this.btnLoadPrevCond.BackColor2 = System.Drawing.Color.White;
+            this.btnLoadPrevCond.BackGradientStyle = Infragistics.Win.GradientStyle.Elliptical;
+            this.btnLoadPrevCond.ButtonClickType = SmartDas.Components.MESButton.ButtonClickTypeEnum.Click;
+            this.btnLoadPrevCond.ButtonPressed = false;
+            this.btnLoadPrevCond.ClickBackColor1 = System.Drawing.Color.Yellow;
+            this.btnLoadPrevCond.ClickBackColor2 = System.Drawing.Color.Empty;
+            this.btnLoadPrevCond.ExTag = null;
+            this.btnLoadPrevCond.Font = new System.Drawing.Font("휴먼모음T", 26.25F);
+            this.btnLoadPrevCond.FontSize = 26.25F;
+            this.btnLoadPrevCond.LinkButtonBox = null;
+            this.btnLoadPrevCond.LinkGrid = null;
+            this.btnLoadPrevCond.LinkMoveSize = 0;
+            this.btnLoadPrevCond.LinkType = SmartDas.Components.MESButton.LinkGridButtonType.Up;
+            this.btnLoadPrevCond.Location = new System.Drawing.Point(811, 418);
+            this.btnLoadPrevCond.Margin = new System.Windows.Forms.Padding(8, 9, 8, 9);
+            this.btnLoadPrevCond.Name = "btnLoadPrevCond";
+            this.btnLoadPrevCond.ParentBox = null;
+            this.btnLoadPrevCond.Size = new System.Drawing.Size(191, 175);
+            this.btnLoadPrevCond.TabIndex = 126;
+            this.btnLoadPrevCond.Text = "이전 조건 불러오기";
+            this.btnLoadPrevCond.TextHAlign = Infragistics.Win.HAlign.Center;
+            this.btnLoadPrevCond.TextVAlign = Infragistics.Win.VAlign.Middle;
+            this.btnLoadPrevCond.UseFlag = true;
+            this.btnLoadPrevCond._Click += new System.EventHandler(this.btnLoadPrevCond__Click);
+            // 
             // DA1200
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -460,5 +493,6 @@
         private Components.MESGrid mesGrid4;
         private Components.MESGrid mesGrid3;
         private Components.MESGrid mesGrid5;
+        private Components.MESButton btnLoadPrevCond;
     }
 }

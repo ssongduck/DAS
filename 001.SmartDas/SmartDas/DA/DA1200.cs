@@ -104,11 +104,11 @@ namespace SmartDas
 
 
                 /*그리드 5개*/
-                mesGrid1.SelectProcedureName = "USP_DA1201_S1";
-                mesGrid2.SelectProcedureName = "USP_DA1201_S2";
-                mesGrid3.SelectProcedureName = "USP_DA1201_S3";
-                mesGrid4.SelectProcedureName = "USP_DA1201_S4";
-                mesGrid5.SelectProcedureName = "USP_DA1201_S5";
+                mesGrid1.SelectProcedureName = "USP_DA1201_S1_TEST";
+                mesGrid2.SelectProcedureName = "USP_DA1201_S2_TEST";
+                mesGrid3.SelectProcedureName = "USP_DA1201_S3_TEST";
+                mesGrid4.SelectProcedureName = "USP_DA1201_S4_TEST";
+                mesGrid5.SelectProcedureName = "USP_DA1201_S5_TEST";
 
                 mesGrid1.FontSize  = 10;
                 mesGrid1.CountRows = 16;
@@ -131,7 +131,7 @@ namespace SmartDas
                 mesGrid2.Size = new Size(202, 540);
                 mesGrid3.Size = new Size(202, 540);
                 mesGrid4.Size = new Size(202, 540);
-                mesGrid4.Size = new Size(202, 540);
+                mesGrid5.Size = new Size(202, 540);
                 mesGrid3.Visible = true;
                 mesGrid4.Visible = true;
                 mesGrid5.Visible = true;
@@ -243,6 +243,62 @@ namespace SmartDas
             }
         }
 
+        private void SetLoad(string Chasu = "") // 이전차수 불러오기
+        {
+            mesGrid1.SelectProcedureName = "USP_DA1202_S1";
+            mesGrid2.SelectProcedureName = "USP_DA1202_S2";
+            mesGrid3.SelectProcedureName = "USP_DA1202_S3";
+            mesGrid4.SelectProcedureName = "USP_DA1202_S4";
+            mesGrid5.SelectProcedureName = "USP_DA1202_S5";
+
+
+            mesGrid1.GetStoreProcedure(); ;
+            mesGrid1.ParameterList.Add(new SqlParameter("@pPLANTCODE", wc.PlantCode));
+            mesGrid1.ParameterList.Add(new SqlParameter("@pWorkCenterCode", wc.Code));
+            mesGrid1.ParameterList.Add(new SqlParameter("@pDate", dtpDate.Value.ToString("yyyy-MM-dd")));
+            mesGrid1.ParameterList.Add(new SqlParameter("@pDayNight", txtDayNight.Tag.ToString()));
+            mesGrid1.ParameterList.Add(new SqlParameter("@Chasu", Chasu));
+            mesGrid1.DoFind();
+
+            mesGrid2.GetStoreProcedure();
+            mesGrid2.ParameterList.Add(new SqlParameter("@pPLANTCODE", wc.PlantCode));
+            mesGrid2.ParameterList.Add(new SqlParameter("@pWorkCenterCode", wc.Code));
+            mesGrid2.ParameterList.Add(new SqlParameter("@pDate", dtpDate.Value.ToString("yyyy-MM-dd")));
+            mesGrid2.ParameterList.Add(new SqlParameter("@pDayNight", txtDayNight.Tag.ToString()));
+            mesGrid2.ParameterList.Add(new SqlParameter("@Chasu", Chasu));
+            mesGrid2.DoFind();
+
+            mesGrid3.GetStoreProcedure();
+            mesGrid3.ParameterList.Add(new SqlParameter("@pPLANTCODE", wc.PlantCode));
+            mesGrid3.ParameterList.Add(new SqlParameter("@pWorkCenterCode", wc.Code));
+            mesGrid3.ParameterList.Add(new SqlParameter("@pDate", dtpDate.Value.ToString("yyyy-MM-dd")));
+            mesGrid3.ParameterList.Add(new SqlParameter("@pDayNight", txtDayNight.Tag.ToString()));
+            mesGrid3.ParameterList.Add(new SqlParameter("@Chasu", Chasu));
+            mesGrid3.DoFind();
+
+
+            mesGrid4.GetStoreProcedure();
+            mesGrid4.ParameterList.Add(new SqlParameter("@pPLANTCODE", wc.PlantCode));
+            mesGrid4.ParameterList.Add(new SqlParameter("@pWorkCenterCode", wc.Code));
+            mesGrid4.ParameterList.Add(new SqlParameter("@pDate", dtpDate.Value.ToString("yyyy-MM-dd")));
+            mesGrid4.ParameterList.Add(new SqlParameter("@pDayNight", txtDayNight.Tag.ToString()));
+            mesGrid4.ParameterList.Add(new SqlParameter("@Chasu", Chasu));
+            mesGrid4.DoFind();
+
+            mesGrid5.GetStoreProcedure();
+            mesGrid5.ParameterList.Add(new SqlParameter("@pPLANTCODE", wc.PlantCode));
+            mesGrid5.ParameterList.Add(new SqlParameter("@pWorkCenterCode", wc.Code));
+            mesGrid5.ParameterList.Add(new SqlParameter("@pDate", dtpDate.Value.ToString("yyyy-MM-dd")));
+            mesGrid5.ParameterList.Add(new SqlParameter("@pDayNight", txtDayNight.Tag.ToString()));
+            mesGrid5.ParameterList.Add(new SqlParameter("@Chasu", Chasu));
+            mesGrid5.DoFind();
+
+            mesGrid1.SetRowHeight(12);
+            mesGrid2.SetRowHeight(12);
+            mesGrid3.SetRowHeight(12);
+            mesGrid4.SetRowHeight(12);
+            mesGrid5.SetRowHeight(12);
+        }
 
         private void SetChasu()
         {
@@ -348,7 +404,15 @@ namespace SmartDas
                         SqlCommand cmd = new SqlCommand();
                         cmd.Connection = conn;
 
-                        if (Common.gsPlantCode == "SK1") { cmd.CommandText = "USP_DA1200_I1"; } else { cmd.CommandText = "USP_DA1201_I1"; }
+                        if (Common.gsPlantCode == "SK1") 
+                        {
+                            cmd.CommandText = "USP_DA1200_I1";
+                        }
+                        else
+                        {
+                            cmd.CommandText = "USP_DA1201_I1";
+                        }
+
                         //cmd.CommandText = "USP_DA1200_I1";
                         cmd.CommandType = CommandType.StoredProcedure;
 
@@ -455,6 +519,7 @@ namespace SmartDas
             }
             finally
             {
+
                 
                 sender.Enabled = true;
                 CloseProgressForm();
@@ -572,6 +637,7 @@ namespace SmartDas
                     dtpDate.Enabled = false;
                     txtDayNight.Enabled = false;
                     lblChasu.Visible = true;
+                    btnLoadPrevCond.Visible = true;
                     btnConfBox[0, 0].Text = "등록";
                     btnConfBox.RedrawButtons();
                     //btnSearch.Enabled = false;
@@ -605,9 +671,16 @@ namespace SmartDas
                     lblChasu.Visible = false;
                     btnConfBox[0, 0].Text = "조회";
                     btnConfBox.RedrawButtons();
+                    btnLoadPrevCond.Visible = false;
                     //btnSearch.Enabled = true;
 
                     lblChasu.Enabled = true;
+                
+                    mesGrid1.SelectProcedureName = "USP_DA1201_S1_TEST";
+                    mesGrid2.SelectProcedureName = "USP_DA1201_S2_TEST";
+                    mesGrid3.SelectProcedureName = "USP_DA1201_S3_TEST";
+                    mesGrid4.SelectProcedureName = "USP_DA1201_S4_TEST";
+                    mesGrid5.SelectProcedureName = "USP_DA1201_S5_TEST";
 
                     DoFind("S");    // 조회
                     break;
@@ -641,6 +714,24 @@ namespace SmartDas
             catch (Exception ex)
             {
                 SetMessage(ex.Message);
+            }
+        }
+
+        private void btnLoadPrevCond__Click(object sender, EventArgs e)
+        {
+            switch (lblChasu.Tag.ToString())
+            {
+                case "1":
+                    break;
+
+                case "2":
+                    SetLoad("2");
+                    break;
+
+                case "3":
+                    SetLoad("3");
+                    break;
+
             }
         }
     }
