@@ -314,6 +314,42 @@ namespace SmartDas
                    var norunTime = Math.Round(time.TotalMinutes, 1);
                    mesGrid1.Rows[e._UltraGridCell.Row.Index].Cells[3].Value = norunTime;                   
                }
+
+               if (e._UltraGridCell.Column.Header.Caption == "비고")
+               {
+                   string remarks = string.Empty;
+
+                   DA9210 da9210 = new DA9210();
+                   ShowDialogForm(da9210);
+                   if (da9210.DialogResult == DialogResult.Cancel)
+                       return;
+
+                   mesGrid1.Rows[e._UltraGridCell.Row.Index].Cells[12].Value = remarks = da9210.resultString;
+
+                   Database db = DatabaseFactory.CreateDatabase();
+                   SqlConnection con = (SqlConnection)db.CreateConnection();
+                   SqlCommand cmd = new SqlCommand();
+
+                   cmd.CommandType = CommandType.Text;
+                   cmd.Connection = con;
+
+                   cmd.CommandText = "UPDATE TPP1600 SET Remarks = @Remarks WHERE 1 = 1 AND PLANTCODE = @PlantCode AND WorkcenterCode = @WorkCenterCode AND StartDate = @STARTDATE";
+                   cmd.Parameters.Clear();
+                   cmd.Parameters.Add(new SqlParameter("@PlantCode", wc.PlantCode));
+                   cmd.Parameters.Add(new SqlParameter("@WorkCenterCode", wc.Code));
+                   cmd.Parameters.Add(new SqlParameter("@STARTDATE", mesGrid1.Rows[e._UltraGridCell.Row.Index].Cells[8].Value));
+                   cmd.Parameters.Add(new SqlParameter("@Remarks", remarks));
+
+                   try
+                   {
+                       db.ExecuteNonQuery(cmd);
+                   }
+                   catch (Exception ex)
+                   {
+                       SetMessage(ex.Message);
+                   }
+
+               }
            }
         }
     }
