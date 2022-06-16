@@ -435,8 +435,8 @@
             this.btnLoadPrevCond.AlarmColor1 = System.Drawing.Color.IndianRed;
             this.btnLoadPrevCond.AlarmColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnLoadPrevCond.BackColor = System.Drawing.SystemColors.Window;
-            this.btnLoadPrevCond.BackColor1 = System.Drawing.Color.LightGreen;
-            this.btnLoadPrevCond.BackColor2 = System.Drawing.Color.White;
+            this.btnLoadPrevCond.BackColor1 = System.Drawing.Color.LightSkyBlue;
+            this.btnLoadPrevCond.BackColor2 = System.Drawing.Color.SkyBlue;
             this.btnLoadPrevCond.BackGradientStyle = Infragistics.Win.GradientStyle.Elliptical;
             this.btnLoadPrevCond.ButtonClickType = SmartDas.Components.MESButton.ButtonClickTypeEnum.Click;
             this.btnLoadPrevCond.ButtonPressed = false;

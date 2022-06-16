@@ -104,11 +104,11 @@ namespace SmartDas
 
 
                 /*그리드 5개*/
-                mesGrid1.SelectProcedureName = "USP_DA1201_S1_TEST";
-                mesGrid2.SelectProcedureName = "USP_DA1201_S2_TEST";
-                mesGrid3.SelectProcedureName = "USP_DA1201_S3_TEST";
-                mesGrid4.SelectProcedureName = "USP_DA1201_S4_TEST";
-                mesGrid5.SelectProcedureName = "USP_DA1201_S5_TEST";
+                mesGrid1.SelectProcedureName = "USP_DA1201_S1";
+                mesGrid2.SelectProcedureName = "USP_DA1201_S2";
+                mesGrid3.SelectProcedureName = "USP_DA1201_S3";
+                mesGrid4.SelectProcedureName = "USP_DA1201_S4";
+                mesGrid5.SelectProcedureName = "USP_DA1201_S5";
 
                 mesGrid1.FontSize  = 10;
                 mesGrid1.CountRows = 16;
@@ -676,11 +676,11 @@ namespace SmartDas
 
                     lblChasu.Enabled = true;
                 
-                    mesGrid1.SelectProcedureName = "USP_DA1201_S1_TEST";
-                    mesGrid2.SelectProcedureName = "USP_DA1201_S2_TEST";
-                    mesGrid3.SelectProcedureName = "USP_DA1201_S3_TEST";
-                    mesGrid4.SelectProcedureName = "USP_DA1201_S4_TEST";
-                    mesGrid5.SelectProcedureName = "USP_DA1201_S5_TEST";
+                    mesGrid1.SelectProcedureName = "USP_DA1201_S1";
+                    mesGrid2.SelectProcedureName = "USP_DA1201_S2";
+                    mesGrid3.SelectProcedureName = "USP_DA1201_S3";
+                    mesGrid4.SelectProcedureName = "USP_DA1201_S4";
+                    mesGrid5.SelectProcedureName = "USP_DA1201_S5";
 
                     DoFind("S");    // 조회
                     break;
