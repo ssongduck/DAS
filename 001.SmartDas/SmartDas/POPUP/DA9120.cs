@@ -47,6 +47,16 @@ namespace SmartDas.POPUP
             _Shift = daynight;
             _OrderNo = orderno;
 
+            if (daynight == "D")
+            {
+                txtDayNight.Text = "주간";
+                txtDayNight.Tag = "D";
+            }
+            else if (daynight == "N")
+            {
+                txtDayNight.Text = "야간";
+                txtDayNight.Tag = "N";
+            }
             mesGrid1.FontSize  = 12;
             mesGrid1.CountRows = 16;
             mesGrid1.SelectProcedureName = "USP_DA9120_S2";
@@ -163,7 +173,7 @@ namespace SmartDas.POPUP
                 cmd.Parameters.Add(new SqlParameter("@AS_PLANTCODE",      _PCode));
                 cmd.Parameters.Add(new SqlParameter("@AS_WORKCENTERCODE", _WCode));
                 cmd.Parameters.Add(new SqlParameter("@AS_RECDATE",        _Date));
-                cmd.Parameters.Add(new SqlParameter("@AS_SHIFT",          _Shift));
+                cmd.Parameters.Add(new SqlParameter("@AS_SHIFT",          txtDayNight.Tag));
                 cmd.Parameters.Add(new SqlParameter("@AS_ORDERNO",        _OrderNo));
                 cmd.Parameters.Add(new SqlParameter("@AS_REMARK",         txtContent.Text));
 
@@ -189,10 +199,24 @@ namespace SmartDas.POPUP
             {                
                 return;
             }
+
+            txtContent.Text = txtContent.Editor.CurrentEditText.ToString();
             ResultString = DoSave();
             this.DialogResult = System.Windows.Forms.DialogResult.OK;
         }
 
-    
+        private void txtDayNight__Click(object sender, EventArgs e)
+        {
+            if (txtDayNight.Tag == "D")
+            {
+                txtDayNight.Text = "야간";
+                txtDayNight.Tag = "N";
+            }
+            else
+            {
+                txtDayNight.Text = "주간";
+                txtDayNight.Tag = "D";
+            }
+        }    
     }
 }
