@@ -157,7 +157,7 @@ namespace SmartDas
                     cmd.Parameters.Add(new SqlParameter("@AS_ORDERNO",        wc.OrderNo));
                     cmd.Parameters.Add(new SqlParameter("@AS_STOPTYPE",       row.Cells[6].Value.ToString().Substring(0,1)));
                     cmd.Parameters.Add(new SqlParameter("@AS_STOPCODE",       row.Cells[6].Value));
-                    cmd.Parameters.Add(new SqlParameter("@AS_REMARK",         row.Cells[12].Value));                                                        
+                    cmd.Parameters.Add(new SqlParameter("@AS_REMARK",         row.Cells[12].Value));
 
                     if (clsDB.gExecute(conn, cmd) < 0)
                     {
@@ -321,12 +321,15 @@ namespace SmartDas
                {
                    string remarks = string.Empty;
 
-                   DA9210 da9210 = new DA9210();
-                   ShowDialogForm(da9210);
-                   if (da9210.DialogResult == DialogResult.Cancel)
+                   DA9220 da9220 = new DA9220();
+
+                   da9220.resultString = mesGrid1.Rows[e._UltraGridCell.Row.Index].Cells[12].Value.ToString();
+                   
+                   ShowDialogForm(da9220);
+                   if (da9220.DialogResult == DialogResult.Cancel)
                        return;
 
-                   mesGrid1.Rows[e._UltraGridCell.Row.Index].Cells[12].Value = remarks = da9210.resultString;
+                   mesGrid1.Rows[e._UltraGridCell.Row.Index].Cells[12].Value = remarks = da9220.resultString;
 
                    Database db = DatabaseFactory.CreateDatabase();
                    SqlConnection con = (SqlConnection)db.CreateConnection();

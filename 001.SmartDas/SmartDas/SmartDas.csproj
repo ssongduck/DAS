@@ -699,6 +699,12 @@
     <Compile Include="POPUP\DA9901.designer.cs">
       <DependentUpon>DA9901.cs</DependentUpon>
     </Compile>
+    <Compile Include="POPUP\DA9220.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="POPUP\DA9220.Designer.cs">
+      <DependentUpon>DA9220.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Components\ButtonBox.resx">
@@ -972,6 +978,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="POPUP\DA9901.resx">
       <DependentUpon>DA9901.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="POPUP\DA9220.resx">
+      <DependentUpon>DA9220.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
