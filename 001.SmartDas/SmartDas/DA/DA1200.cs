@@ -29,6 +29,8 @@ namespace SmartDas
             InitializeComponent();
         }
 
+        //커밋 테스트
+
         private void DA1200_Load(object sender, EventArgs e)
         {            
             SetChasu();
