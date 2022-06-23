@@ -19,7 +19,7 @@
             }
             base.Dispose(disposing);
         }
-
+        //커밋
         #region Windows Form 디자이너에서 생성한 코드
 
         /// <summary>
