@@ -26,6 +26,9 @@ namespace SmartDas.POPUP
         private string resultString = string.Empty;
         private System.Diagnostics.Process ps;
 
+        int _iSEQ = 0;
+        string _sDayNight = string.Empty;
+
         public string ResultString
         {
             get { return resultString; }
@@ -207,6 +210,53 @@ namespace SmartDas.POPUP
             this.DialogResult = System.Windows.Forms.DialogResult.OK;
         }
 
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            DoDelete();
+        }
+
+        private void DoDelete()
+        {
+
+            //dtpDate.Text
+            //    _sDayNight
+            if (_iSEQ.Equals(0))
+            {
+                return; 
+            }
+
+            try
+            {
+                Database database = DatabaseFactory.CreateDatabase();
+                SqlConnection sqlConnection = (SqlConnection)database.CreateConnection();
+                SqlCommand sqlCommand = new SqlCommand();
+
+                sqlCommand.CommandText = "USP_DA9120_D1";
+                sqlCommand.CommandType = CommandType.StoredProcedure;
+
+                sqlCommand.Parameters.Add(new SqlParameter("@AS_PLANTCODE", Common.SelectedWorkCenter.PlantCode));
+                sqlCommand.Parameters.Add(new SqlParameter("@AS_SEQ", _iSEQ));
+                sqlCommand.Parameters.Add(new SqlParameter("@AS_WORKCENTERCODE", Common.SelectedWorkCenter.Code));
+                sqlCommand.Parameters.Add(new SqlParameter("@AS_RECDATE", dtpDate.Text));
+                sqlCommand.Parameters.Add(new SqlParameter("@AS_DayNight", _sDayNight));
+                
+
+                clsDB.gExecute(sqlConnection, sqlCommand);
+
+
+            }
+            catch (Exception ex)
+            {
+                clsDB.Rollback();
+            }
+            finally
+            {
+                _iSEQ = 0;
+                DoFind();
+            }
+        }
+
         private void txtDayNight__Click(object sender, EventArgs e)
         {
             if (txtDayNight.Tag == "D")
@@ -219,6 +269,13 @@ namespace SmartDas.POPUP
                 txtDayNight.Text = "주간";
                 txtDayNight.Tag = "D";
             }
-        }    
+        }
+
+        private void mesGrid1_GridClick(object sender, MESGrid.GridClickEventArg e)
+        {
+            _iSEQ = e._UltraGridRow.Cells["Seq"].Value.ToString() == "" ? 0 : Convert.ToInt32(e._UltraGridRow.Cells["Seq"].Value);
+            _sDayNight = e._UltraGridRow.Cells["DayNight"].Value.ToString();
+        }
+ 
     }
 }

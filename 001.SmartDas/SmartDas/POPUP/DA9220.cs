@@ -264,7 +264,7 @@ namespace SmartDas.POPUP
                     keybd_event((byte)Keys.Back, 0, 0x02, 0);
                     break;
                 case "확인":
-                    resultString = txtContent.Text.Trim();
+                    resultString = txtContent.Editor.CurrentEditText.ToString();
                     this.DialogResult = System.Windows.Forms.DialogResult.OK;
                     break;
                 case "취소":

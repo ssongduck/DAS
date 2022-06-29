@@ -31,6 +31,7 @@
             Infragistics.Win.Appearance appearance1 = new Infragistics.Win.Appearance();
             this.txtContent = new Infragistics.Win.UltraWinEditors.UltraTextEditor();
             this.dtpDate = new System.Windows.Forms.DateTimePicker();
+            this.btnDelete = new SmartDas.Components.MESButton();
             this.txtDayNight = new SmartDas.Components.MESLabel();
             this.labHeader = new SmartDas.Components.MESLabel();
             this.mesGrid1 = new SmartDas.Components.MESGrid();
@@ -61,6 +62,37 @@
             this.dtpDate.Size = new System.Drawing.Size(239, 52);
             this.dtpDate.TabIndex = 125;
             this.dtpDate.ValueChanged += new System.EventHandler(this.dtpDate_ValueChanged);
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.AlarmColor1 = System.Drawing.Color.IndianRed;
+            this.btnDelete.AlarmColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnDelete.BackColor = System.Drawing.Color.SkyBlue;
+            this.btnDelete.BackColor1 = System.Drawing.Color.LightSkyBlue;
+            this.btnDelete.BackColor2 = System.Drawing.Color.SkyBlue;
+            this.btnDelete.BackGradientStyle = Infragistics.Win.GradientStyle.Elliptical;
+            this.btnDelete.ButtonClickType = SmartDas.Components.MESButton.ButtonClickTypeEnum.Click;
+            this.btnDelete.ButtonPressed = false;
+            this.btnDelete.ClickBackColor1 = System.Drawing.Color.Moccasin;
+            this.btnDelete.ClickBackColor2 = System.Drawing.Color.Empty;
+            this.btnDelete.ExTag = null;
+            this.btnDelete.Font = new System.Drawing.Font("휴먼모음T", 20F);
+            this.btnDelete.FontSize = 20F;
+            this.btnDelete.LinkButtonBox = null;
+            this.btnDelete.LinkGrid = null;
+            this.btnDelete.LinkMoveSize = 0;
+            this.btnDelete.LinkType = SmartDas.Components.MESButton.LinkGridButtonType.Up;
+            this.btnDelete.Location = new System.Drawing.Point(449, 62);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(8, 9, 8, 9);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.ParentBox = null;
+            this.btnDelete.Size = new System.Drawing.Size(112, 53);
+            this.btnDelete.TabIndex = 127;
+            this.btnDelete.Text = "삭제";
+            this.btnDelete.TextHAlign = Infragistics.Win.HAlign.Center;
+            this.btnDelete.TextVAlign = Infragistics.Win.VAlign.Middle;
+            this.btnDelete.UseFlag = true;
+            this.btnDelete._Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // txtDayNight
             // 
@@ -121,6 +153,7 @@
             this.mesGrid1.SelectProcedureName = null;
             this.mesGrid1.Size = new System.Drawing.Size(674, 272);
             this.mesGrid1.TabIndex = 123;
+            this.mesGrid1.GridClick += new SmartDas.Components.MESGrid.gridClick(this.mesGrid1_GridClick);
             // 
             // btnSave
             // 
@@ -211,6 +244,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(690, 563);
             this.ControlBox = false;
+            this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.txtDayNight);
             this.Controls.Add(this.dtpDate);
             this.Controls.Add(this.labHeader);
@@ -241,5 +275,6 @@
         private System.Windows.Forms.DateTimePicker dtpDate;
         private Components.MESLabel labHeader;
         private Components.MESLabel txtDayNight;
+        private Components.MESButton btnDelete;
     }
 }
