@@ -395,6 +395,8 @@ namespace SmartDas
                 cmd.Connection = conn;
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.Add(new SqlParameter("@move_ticket", txtLotNo.Text.Trim()));
+                cmd.Parameters.Add(new SqlParameter("@gubun", "L"));
+                cmd.Parameters.Add(new SqlParameter("@workcentercode", Common.SelectedWorkCenter.Code));
                 DataTable tbLot = db.ExecuteDataSet(cmd).Tables[0];
 
                 if (tbLot.Columns[0].ColumnName.ToLower() == "err_code" && tbLot.Rows[0]["err_code"].ToString().Equals("1"))
